@@ -28,6 +28,7 @@ Then open `http://127.0.0.1:4177/`.
 - Garden plots with live growth timers and animated crop growth.
 - Fruit weight rolls on harvest, with heavier crops selling for more.
 - Seed shop with 5-minute limited restocks, Quick Buy quantity input, crop inventory, selling, and seed selection.
+- Weekly Events tab, ready for rotating events.
 - Upgrades for more plots, faster growth, and bigger harvests.
 - Responsive layout for desktop, tablet, and mobile screens.
 - Automatic localStorage saving every few seconds and before the page closes.
@@ -44,13 +45,17 @@ The game saves coins, seeds, harvested crops, planted crops, growth times, selec
 The Gear Shop sells premium consumable tools with Quick Buy support:
 
 - Shovel: removes a planted crop from a plot.
-- Watering Can: halves the remaining growth time of a planted crop.
+- Watering Can: bought in bundles of 10 and halves the remaining growth time of a planted crop.
 - Reclaimer: removes a planted crop and returns one matching seed.
 - Basic Sprinkler, Advanced Sprinkler, and Master Sprinkler: water a 3x3 plot area, speed up growth, and increase fruit size for heavier harvests.
 
 ## Daily Quests
 
 Daily quests reset each day and track planting seeds plus coins earned from selling crops. Completing quests awards seed packs such as Starter Seed Pack, Fruit Seed Pack, and Rare Seed Pack.
+
+## Weekly Events
+
+Events rotate once a week from the Events tab. This week is intentionally empty.
 
 
 ## Upgrade Progression
