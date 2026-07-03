@@ -58,7 +58,7 @@ Daily quests reset each day and track planting seeds plus coins earned from sell
 
 Events rotate once a week from the Events tab. This week's event is Nighttime.
 
-Nighttime adds Night Time weather during the first 5 minutes of every hour, which can give plants the Moonlit mutation for a x4 value multiplier. Weather is shared by time window, so every player sees the same weather at the same time. The event shop restocks every 10 minutes with the same restock time and stock for everyone. It has limited stock for Moon Blossom, Moonbloom, Owl, and Night Seed Packs. The Owl is a Divine event pet that makes a planted crop Moonlit every 5 minutes. Night Seed Packs can contain Orchid, Lavender, Mulberry, Nightshade, Black Apple, or Dark Blossom.
+Nighttime adds Night Time weather during the first 5 minutes of every hour, which can give plants the Moonlit mutation for a x4 value multiplier. Weather is shared by time window, so every player sees the same weather at the same time. Weather events rotate every 5 minutes, can last 5 to 10 minutes, and up to two weather events can overlap. The event shop restocks every 10 minutes with the same restock time and stock for everyone. It has limited stock for Moon Blossom, Moonbloom, Owl, and Night Seed Packs. The Owl is a Divine event pet that makes a planted crop Moonlit every 5 minutes. Night Seed Packs can contain Orchid, Lavender, Mulberry, Nightshade, Black Apple, or Dark Blossom.
 
 
 ## Upgrade Progression
@@ -76,12 +76,12 @@ The garden now starts with 12 plots, and plot upgrades add one additional plot p
 
 Each harvest rolls a fruit weight. Heavier crops receive a higher sell multiplier, and harvested inventory shows the weight and value multiplier for each stack. Mutations and pet coin bonuses stack with weight value.
 
-Sprinklers can increase the next harvest's fruit weight by adding a size boost to plants in a 3x3 area. They also add a temporary mutation boost that can help plants gain Gold, Rainbow, and active weather mutations while growing.
+Sprinklers can increase the next harvest's fruit weight by adding a size boost to plants in a 3x3 area. They also add a temporary mutation boost that can help plants gain Gold, Rainbow, and active weather mutations while growing. Temporary growth speed boosts are cleared after harvest or regrowth, so sped-up crops do not keep saving that boost forever.
 
 
 ## Plant Mutations and Weather
 
-Plants can now gain stackable mutations. Gold and Rainbow can appear naturally, and shared active weather can add weather mutations such as Wet, Frozen, Windblown, Celestial, or Moonlit during the first 5 minutes of each hour in the Nighttime event. Mutated harvests sell for more coins, and multiple mutations can stack on the same plant.
+Plants can now gain stackable mutations. Gold and Rainbow can appear naturally, and shared active weather can add weather mutations such as Wet, Frozen, Windblown, Celestial, Shocked from Thunderstorms, or Moonlit during the first 5 minutes of each hour in the Nighttime event. Shocked has a x10 value multiplier. Mutated harvests sell for more coins, and multiple mutations can stack on the same plant.
 
 ## More Fruits and Rarities
 
