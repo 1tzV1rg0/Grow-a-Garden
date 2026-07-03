@@ -57,7 +57,7 @@ Daily quests reset each day and track planting seeds plus coins earned from sell
 
 Events rotate once a week from the Events tab. This week's event is Nighttime.
 
-Nighttime adds Night Time weather, which can give plants the Moonlit mutation for a x4 value multiplier. The event shop restocks every 10 minutes with the same restock time and stock for everyone. It has limited stock for Moon Blossom, Moonbloom, Owl, and Night Seed Packs. The Owl is a Divine event pet that makes a planted crop Moonlit every 5 minutes. Night Seed Packs can contain Orchid, Lavender, Mulberry, Nightshade, Black Apple, or Dark Blossom.
+Nighttime adds Night Time weather during the first 5 minutes of every hour, which can give plants the Moonlit mutation for a x4 value multiplier. Weather is shared by time window, so every player sees the same weather at the same time. The event shop restocks every 10 minutes with the same restock time and stock for everyone. It has limited stock for Moon Blossom, Moonbloom, Owl, and Night Seed Packs. The Owl is a Divine event pet that makes a planted crop Moonlit every 5 minutes. Night Seed Packs can contain Orchid, Lavender, Mulberry, Nightshade, Black Apple, or Dark Blossom.
 
 
 ## Upgrade Progression
@@ -80,7 +80,7 @@ Sprinklers can increase the next harvest's fruit weight by adding a size boost t
 
 ## Plant Mutations and Weather
 
-Plants can now gain stackable mutations. Gold and Rainbow can appear naturally, and active weather can add weather mutations such as Wet, Frozen, Windblown, Celestial, or Moonlit during the Nighttime event. Mutated harvests sell for more coins, and multiple mutations can stack on the same plant.
+Plants can now gain stackable mutations. Gold and Rainbow can appear naturally, and shared active weather can add weather mutations such as Wet, Frozen, Windblown, Celestial, or Moonlit during the first 5 minutes of each hour in the Nighttime event. Mutated harvests sell for more coins, and multiple mutations can stack on the same plant.
 
 ## More Fruits and Rarities
 
