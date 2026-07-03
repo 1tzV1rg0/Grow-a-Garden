@@ -85,7 +85,7 @@ Some fruits are seed-pack exclusive and never appear in the seed shop: Candy App
 
 ## Seed Shop Restocks
 
-The Seed Shop restocks every 5 minutes and each restock has a limited number of seeds available. Seeds are displayed by rarity and price. Rarer seeds appear less often, and Prismatic seeds have only a 0.05% chance to appear in stock. Use Quick Buy on a stocked seed to type how many seeds you want to purchase at once.
+The Seed Shop restocks every 5 minutes and each restock has a limited number of seeds available. Restock rolls are shared by time window, so every player sees the same fresh stock during the same 5-minute period, while each player's purchases still reduce their own local stock. Seeds are displayed by rarity and price. Rarer seeds appear less often, and Prismatic seeds have only a 0.05% chance to appear in stock. Use Quick Buy on a stocked seed to type how many seeds you want to purchase at once.
 
 ## Pet Shop
 
