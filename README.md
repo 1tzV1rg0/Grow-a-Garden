@@ -26,6 +26,7 @@ Then open `http://127.0.0.1:4177/`.
 - Expanded crop roster with vegetables and fruits, including Strawberry, Lemon, Cherry, Banana, Kiwi, Papaya, Bamboo, Pomegranate, Lychee, Durian, Lotus Fruit, Nebula Orange, Infinity Fig, and more.
 - Rarity tiers from Common through Mythic, shown in the shop and inventory.
 - Garden plots with live growth timers and animated crop growth.
+- Fruit weight rolls on harvest, with heavier crops selling for more.
 - Seed shop with 5-minute limited restocks, Quick Buy quantity input, crop inventory, selling, and seed selection.
 - Upgrades for more plots, faster growth, and bigger harvests.
 - Responsive layout for desktop, tablet, and mobile screens.
@@ -61,6 +62,10 @@ Upgrades now use generated level-based progression up to Level 50. More Plots ad
 Some fruit crops now stay planted after harvest and regrow for additional harvests. Strawberry, Blueberry, Apple, Grape, Mango, Dragonfruit, Starfruit, and Moon Melon can all produce more than once before the plot clears.
 
 The garden now starts with 12 plots, and plot upgrades add one additional plot per level after that.
+
+## Fruit Weight
+
+Each harvest rolls a fruit weight. Heavier crops receive a higher sell multiplier, and harvested inventory shows the weight and value multiplier for each stack. Mutations and pet coin bonuses stack with weight value.
 
 
 ## Plant Mutations and Weather
