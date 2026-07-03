@@ -41,7 +41,7 @@ The game saves coins, seeds, harvested crops, planted crops, growth times, selec
 
 ## Gear Shop
 
-The Gear Shop sells consumable tools:
+The Gear Shop sells premium consumable tools with Quick Buy support:
 
 - Shovel: removes a planted crop from a plot.
 - Watering Can: halves the remaining growth time of a planted crop.
