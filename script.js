@@ -13,7 +13,7 @@ var EVENT_ITEMS=[
 {id:"moonblossom",kind:"seed",name:"Moon Blossom Seed",icon:"\uD83C\uDF19",cost:200000,chance:.005,desc:"Limited Divine event plant."},
 {id:"nightOwl",kind:"pet",name:"Owl",icon:"\uD83E\uDD89",cost:500000,chance:.0025,desc:"Divine pet. Makes a plant Moonlit every 5 minutes."},
 {id:"moonbloom",kind:"seed",name:"Moonbloom Seed",icon:"\uD83C\uDF11",cost:1000000,chance:.001,desc:"Limited Prismatic event plant."},
-{id:"nightSeedPack",kind:"pack",name:"Night Seed Pack",icon:"\uD83C\uDF0C",cost:1000,chance:.75,desc:"Contains one limited night seed."}
+{id:"nightSeedPack",kind:"pack",name:"Night Seed Pack",icon:"\uD83C\uDF0C",cost:1000,chance:.75,min:2,max:5,desc:"Contains one limited night seed."}
 ];
 var PETS={
 bee:{name:"Honey Bee",icon:"🐝",rarity:"Common",desc:"Adds a small Gold mutation chance.",gold:.018},
@@ -182,7 +182,7 @@ function drawQuests(){el.quests.innerHTML="";state.daily.quests.forEach(function
 function eventWeek(){var start=new Date(Date.UTC(2026,0,5));return Math.floor((Date.now()-start.getTime())/(7*24*60*60*1000))}
 function eventItem(id){return EVENT_ITEMS.find(function(item){return item.id===id})}
 function eventRoll(week,id,salt){return stockRoll(week,"event_"+id,salt)}
-function rollEventStock(week){week=week||eventWeek();var stock={};if(activeNightEvent())EVENT_ITEMS.forEach(function(item){if(eventRoll(week,item.id,29)<item.chance)stock[item.id]=1});state.eventShop={stock:stock,week:week};return stock}
+function rollEventStock(week){week=week||eventWeek();var stock={};if(activeNightEvent())EVENT_ITEMS.forEach(function(item){if(eventRoll(week,item.id,29)<item.chance){var min=item.min||1,max=item.max||min;stock[item.id]=min+Math.floor(eventRoll(week,item.id,73)*(max-min+1))}});state.eventShop={stock:stock,week:week};return stock}
 function ensureEventStock(){if(!state.eventShop)state.eventShop={stock:{},week:-1};if(!state.eventShop.stock)state.eventShop.stock={};var week=eventWeek();if(state.eventShop.week!==week)rollEventStock(week)}
 function eventStockLeft(id){ensureEventStock();return state.eventShop.stock[id]||0}
 function nightPackSeed(){var roll=Math.random()*100;if(roll<50)return"orchid";if(roll<75)return"lavender";if(roll<90)return"mulberry";if(roll<95)return"nightshade";if(roll<98.5)return"blackapple";return"darkblossom"}
