@@ -27,7 +27,7 @@ Then open `http://127.0.0.1:4177/`.
 - Rarity tiers from Common through Mythic, shown in the shop and inventory.
 - Garden plots with live growth timers and animated crop growth.
 - Fruit weight rolls on harvest, with heavier crops selling for more.
-- Seed shop with 5-minute limited restocks, Quick Buy quantity input, crop inventory, selling, and seed selection.
+- Seed shop, Gear Shop, and Pet Shop eggs with limited shared restocks, Quick Buy quantity input, crop inventory, selling, and seed selection.
 - Weekly Events tab, ready for rotating events.
 - Upgrades for more plots, faster growth, and bigger harvests.
 - Responsive layout for desktop, tablet, and mobile screens.
@@ -37,12 +37,12 @@ Then open `http://127.0.0.1:4177/`.
 
 ## Saved Progress
 
-The game saves coins, seeds, harvested crops, planted crops, growth times, selected upgrades, unlocked plot count, current Seed Shop stock, restock timing, lifetime coins earned, lifetime seeds planted, and leaderboard name in the browser's localStorage. Refreshing or closing the page keeps your farm progress on the same browser and device.
+The game saves coins, seeds, harvested crops, planted crops, growth times, selected upgrades, unlocked plot count, current Seed Shop stock, Gear Shop stock, Pet Shop egg stock, restock timing, lifetime coins earned, lifetime seeds planted, and leaderboard name in the browser's localStorage. Refreshing or closing the page keeps your farm progress on the same browser and device.
 
 
 ## Gear Shop
 
-The Gear Shop sells premium consumable tools with Quick Buy support:
+The Gear Shop sells premium consumable tools with Quick Buy support. Gear stock is limited and restocks every 5 minutes on the same shared timer for everyone:
 
 - Shovel: removes a planted crop from a plot.
 - Watering Can: bought in bundles of 10 and halves the remaining growth time of a planted crop.
@@ -96,7 +96,7 @@ The Seed Shop restocks every 5 minutes and each restock has a limited number of 
 
 ## Pet Shop
 
-The Pet Shop sells eggs that hatch into pets. Eggs are premium purchases, with the original egg prices increased by 100x and new Orchard, Royal, and Prism eggs added. Owned pets stack passive bonuses automatically. Pets can improve mutation chances, add bonus coins from sales, speed up growth, increase harvest yield, and add extra harvests to planted crops.
+The Pet Shop sells eggs that hatch into pets. Egg stock is limited and restocks every 10 minutes on the same shared timer for everyone. More expensive eggs have lower stock chances. Eggs are premium purchases, with the original egg prices increased by 100x and new Orchard, Royal, and Prism eggs added. Owned pets stack passive bonuses automatically. Pets can improve mutation chances, add bonus coins from sales, speed up growth, increase harvest yield, and add extra harvests to planted crops.
 
 ## Online Leaderboard
 
