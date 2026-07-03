@@ -46,6 +46,7 @@ The Gear Shop sells premium consumable tools with Quick Buy support:
 - Shovel: removes a planted crop from a plot.
 - Watering Can: halves the remaining growth time of a planted crop.
 - Reclaimer: removes a planted crop and returns one matching seed.
+- Basic Sprinkler, Advanced Sprinkler, and Master Sprinkler: water a 3x3 plot area, speed up growth, and increase fruit size for heavier harvests.
 
 ## Daily Quests
 
@@ -66,6 +67,8 @@ The garden now starts with 12 plots, and plot upgrades add one additional plot p
 ## Fruit Weight
 
 Each harvest rolls a fruit weight. Heavier crops receive a higher sell multiplier, and harvested inventory shows the weight and value multiplier for each stack. Mutations and pet coin bonuses stack with weight value.
+
+Sprinklers can increase the next harvest's fruit weight by adding a size boost to plants in a 3x3 area.
 
 
 ## Plant Mutations and Weather
