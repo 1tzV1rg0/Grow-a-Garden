@@ -55,7 +55,9 @@ Daily quests reset each day and track planting seeds plus coins earned from sell
 
 ## Weekly Events
 
-Events rotate once a week from the Events tab. This week is intentionally empty.
+Events rotate once a week from the Events tab. This week's event is Nighttime.
+
+Nighttime adds Night Time weather, which can give plants the Moonlit mutation for a x4 value multiplier. The event shop has limited weekly stock for Moon Blossom, Moonbloom, Owl, and Night Seed Packs. The Owl is a Divine event pet that makes a planted crop Moonlit every 5 minutes. Night Seed Packs can contain Orchid, Lavender, Mulberry, Nightshade, Black Apple, or Dark Blossom.
 
 
 ## Upgrade Progression
@@ -78,7 +80,7 @@ Sprinklers can increase the next harvest's fruit weight by adding a size boost t
 
 ## Plant Mutations and Weather
 
-Plants can now gain stackable mutations. Gold and Rainbow can appear naturally, and active weather can add weather mutations such as Wet, Frozen, Windblown, or Celestial. Mutated harvests sell for more coins, and multiple mutations can stack on the same plant.
+Plants can now gain stackable mutations. Gold and Rainbow can appear naturally, and active weather can add weather mutations such as Wet, Frozen, Windblown, Celestial, or Moonlit during the Nighttime event. Mutated harvests sell for more coins, and multiple mutations can stack on the same plant.
 
 ## More Fruits and Rarities
 
