@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sprout Market Garden</title>
+  <link rel="stylesheet" href="style.css?v=20260703-2">
+</head>
+<body>
+  <div class="app">
+    <header class="hero">
+      <div><p class="eyebrow">Grow, harvest, sell, upgrade</p><h1>Sprout Market Garden</h1></div>
+      <div class="stats"><div><span>Coins</span><b id="coins">0</b></div><div><span>Plots</span><b id="plotsOwned">0</b></div><div><span>Weather</span><b id="weatherNow">Sunny</b></div><div><span>Saved</span><b id="savedAt">Now</b></div></div>
+    </header>
+    <main class="layout">
+      <section class="garden"><div class="bar"><div><p class="eyebrow">Select a seed or gear, then choose soil</p><h2>Garden Plots</h2></div><strong id="selectedSeed">No seed or gear selected</strong></div><div id="gardenGrid" class="garden-grid"></div></section>
+      <aside class="sidebar">
+        <section class="panel compact-help"><h2>How to Play</h2><p>Buy seeds, plant plots, use gear on crops, sell harvests, and finish daily quests for seed packs.</p></section>
+        <section class="panel hub-panel">
+          <div class="tab-buttons" role="tablist" aria-label="Garden menus">
+            <button class="tab-button active" data-tab="inventoryPanel" type="button">Inventory</button>
+            <button class="tab-button" data-tab="seedShopPanel" type="button">Seed Shop</button>
+            <button class="tab-button" data-tab="gearShopPanel" type="button">Gear Shop</button>
+            <button class="tab-button" data-tab="petShopPanel" type="button">Pet Shop</button>
+            <button class="tab-button" data-tab="questsPanel" type="button">Quests</button>
+            <button class="tab-button" data-tab="upgradesPanel" type="button">Upgrades</button>
+            <button class="tab-button" data-tab="leaderboardPanel" type="button">Leaderboard</button>
+          </div>
+          <section id="inventoryPanel" class="tab-panel active" aria-labelledby="Inventory"><div class="bar"><h2>Inventory</h2><button id="sellAll" class="ghost">Sell All</button></div><div id="inventory" class="list"></div></section>
+          <section id="seedShopPanel" class="tab-panel" aria-labelledby="Seed Shop"><div class="bar"><h2>Seed Shop</h2><button id="clearSeed" class="ghost">Clear</button></div><div id="shop" class="list"></div></section>
+          <section id="gearShopPanel" class="tab-panel" aria-labelledby="Gear Shop"><h2>Gear Shop</h2><div id="gearShop" class="list"></div></section>
+          <section id="questsPanel" class="tab-panel" aria-labelledby="Quests"><h2>Daily Quests</h2><div id="quests" class="list"></div></section>
+          <section id="petShopPanel" class="tab-panel" aria-labelledby="Pet Shop"><h2>Pet Shop</h2><div id="petShop" class="list"></div></section>
+          <section id="upgradesPanel" class="tab-panel" aria-labelledby="Upgrades"><h2>Upgrades</h2><div id="upgrades" class="list"></div></section>
+          <section id="leaderboardPanel" class="tab-panel" aria-labelledby="Leaderboard"><div class="bar"><h2>Leaderboard</h2><button id="refreshLeaderboard" class="ghost" type="button">Refresh</button></div><div id="leaderboard" class="list"></div></section>
+        </section>
+        <section class="panel"><h2>Game Controls</h2><div class="control-row"><button id="saveGame">Save Game</button><button id="resetGame" class="danger">Reset Game</button></div><p id="log" class="log">Welcome. Buy a seed to begin.</p></section>
+      </aside>
+    </main>
+  </div>
+  <div id="packModal" class="pack-modal" aria-hidden="true">
+    <div class="pack-dialog" role="dialog" aria-modal="true" aria-labelledby="packTitle">
+      <div class="pack-lid"></div>
+      <h2 id="packTitle">Seed Pack</h2>
+      <p id="packSubtitle">Opening...</p>
+      <div id="packCards" class="pack-cards"></div>
+      <button id="packClose" type="button">Collect Seeds</button>
+    </div>
+  </div>
+  <div id="eggModal" class="pack-modal" aria-hidden="true">
+    <div class="pack-dialog egg-dialog" role="dialog" aria-modal="true" aria-labelledby="eggTitle">
+      <div class="egg-shell"></div>
+      <h2 id="eggTitle">Egg Hatch</h2>
+      <p id="eggSubtitle">The egg is wobbling...</p>
+      <div id="eggResult" class="egg-result"></div>
+      <button id="eggClose" type="button">Keep Pet</button>
+    </div>
+  </div>
+  <script src="script.js?v=20260703-2"></script>
+</body>
+</html>
+
+
+
