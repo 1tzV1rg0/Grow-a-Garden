@@ -57,7 +57,7 @@ Daily quests reset each day and track planting seeds plus coins earned from sell
 
 Events rotate once a week from the Events tab. This week's event is Nighttime.
 
-Nighttime adds Night Time weather, which can give plants the Moonlit mutation for a x4 value multiplier. The event shop has limited weekly stock for Moon Blossom, Moonbloom, Owl, and Night Seed Packs. The Owl is a Divine event pet that makes a planted crop Moonlit every 5 minutes. Night Seed Packs can contain Orchid, Lavender, Mulberry, Nightshade, Black Apple, or Dark Blossom.
+Nighttime adds Night Time weather, which can give plants the Moonlit mutation for a x4 value multiplier. The event shop restocks every 10 minutes with the same restock time and stock for everyone. It has limited stock for Moon Blossom, Moonbloom, Owl, and Night Seed Packs. The Owl is a Divine event pet that makes a planted crop Moonlit every 5 minutes. Night Seed Packs can contain Orchid, Lavender, Mulberry, Nightshade, Black Apple, or Dark Blossom.
 
 
 ## Upgrade Progression
