@@ -86,3 +86,5 @@ The Pet Shop sells eggs that hatch into pets. Eggs are premium purchases, with t
 ## Online Leaderboard
 
 The Leaderboard tab can submit and refresh online scores when the game is opened through `server.js`. Scores are stored in `leaderboard.json` and ranked by current coins, then lifetime coins earned, then lifetime seeds planted. If the game is opened directly as `index.html`, the leaderboard tab will explain that the server needs to be running.
+
+<!-- Trigger GitHub Pages redeploy -->
