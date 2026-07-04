@@ -14,5 +14,7 @@
 
 .garden{position:relative}.pet-yard{position:absolute;inset:72px 16px 16px;pointer-events:none;z-index:4;overflow:hidden}.yard-pet{position:absolute;display:grid;place-items:center;min-width:46px;min-height:46px;padding:4px;border-radius:8px;background:rgba(255,248,231,.86);border:1px solid rgba(53,92,48,.2);box-shadow:0 8px 22px rgba(37,62,42,.16);transform:translate(-50%,-50%)}.yard-pet span{font-size:1.7rem;line-height:1}.yard-pet small{margin-top:1px;padding:1px 5px;border-radius:999px;background:#2f8c52;color:#fff;font-size:.62rem;font-weight:900}.yard-pet.rarity-legendary,.yard-pet.rarity-mythic,.yard-pet.rarity-divine,.yard-pet.rarity-prismatic{background:rgba(255,248,207,.9)}
 
+.control-row{grid-template-columns:repeat(3,1fr)}.music-toggle.active{background:#5b5fc7}.music-toggle.active:hover:not(:disabled){background:#484db0}@media(max-width:680px){.control-row{grid-template-columns:1fr}}
+
 
 

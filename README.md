@@ -29,6 +29,7 @@ Then open the URL printed in the terminal. It starts with `http://127.0.0.1:4177
 - Fruit weight rolls on harvest, with heavier crops selling for more.
 - Seed shop, Gear Shop, and Pet Shop eggs with limited shared restocks, Quick Buy quantity input, crop inventory, selling, and seed selection.
 - Visible pets that wander around the garden and level up from duplicates.
+- Optional generated music that changes to match the current weather.
 - Weekly Events tab, ready for rotating events.
 - Upgrades for more plots, faster growth, and bigger harvests.
 - Responsive layout for desktop, tablet, and mobile screens.
@@ -82,6 +83,8 @@ Sprinklers can increase the next harvest's fruit weight by adding a size boost t
 ## Plant Mutations and Weather
 
 Plants can now gain stackable mutations. Gold and Rainbow can appear naturally, and shared active weather can add weather mutations such as Wet, Frozen, Windblown, Celestial, Shocked from Thunderstorms, or Moonlit during the first 5 minutes of each hour in the Nighttime event. Shocked has a x10 value multiplier. Crops also get a one-time final mutation roll when growth finishes, and harvest triggers that final roll if it has not happened yet. Mutated harvests sell for more coins, and multiple mutations can stack on the same plant.
+
+Use the Music button in Game Controls to turn on generated background music. Browsers require a click before sound can start, so music stays off until the player enables it. The active weather controls the notes, and overlapping weather mixes two small themes.
 
 ## More Fruits and Rarities
 
