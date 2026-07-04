@@ -12,7 +12,7 @@ For the online leaderboard, run the included server instead:
 node server.js
 ```
 
-Then open `http://127.0.0.1:4177/`.
+Then open the URL printed in the terminal. It starts with `http://127.0.0.1:4177/`, and if that port is already busy the server automatically tries the next available port.
 
 1. Buy seeds from the Seed Shop.
 2. Select a seed, then click an empty garden plot to plant it.
@@ -101,7 +101,7 @@ The Pet Shop sells eggs that hatch into pets. Egg stock is limited and restocks 
 
 ## Online Leaderboard
 
-The Leaderboard tab can submit and refresh online scores when the game is opened through `server.js`. Scores are stored in `leaderboard.json` and ranked by current coins, then lifetime coins earned, then lifetime seeds planted. If the game is opened directly as `index.html`, the leaderboard tab will explain that the server needs to be running.
+The Leaderboard tab can submit and refresh online scores when the game is opened through `server.js`. Scores are stored in `leaderboard.json` and ranked by current coins, then lifetime coins earned, then lifetime seeds planted. If the game is opened directly as `index.html` or through GitHub Pages, the leaderboard tab will explain that the local server needs to be running.
 
 Update game website
 

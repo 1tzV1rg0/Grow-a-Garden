@@ -2,7 +2,8 @@ const http = require("http");
 const fs = require("fs");
 const path = require("path");
 
-const PORT = Number(process.env.PORT || 4177);
+const START_PORT = Number(process.env.PORT || 4177);
+const HOST = process.env.HOST || "127.0.0.1";
 const ROOT = __dirname;
 const DATA_FILE = path.join(ROOT, "leaderboard.json");
 const TYPES = {
@@ -23,6 +24,15 @@ function readScores() {
 
 function writeScores(rows) {
   fs.writeFileSync(DATA_FILE, JSON.stringify({ rows }, null, 2));
+}
+
+function sendText(res, status, text) {
+  res.writeHead(status, {
+    "Content-Type": "text/plain; charset=utf-8",
+    "Cache-Control": "no-store",
+    "X-Content-Type-Options": "nosniff"
+  });
+  res.end(text);
 }
 
 function cleanScore(body) {
@@ -47,7 +57,14 @@ function ranked(rows) {
 }
 
 function sendJson(res, data) {
-  res.writeHead(200, { "Content-Type": TYPES[".json"], "Cache-Control": "no-store" });
+  res.writeHead(200, {
+    "Content-Type": TYPES[".json"],
+    "Cache-Control": "no-store",
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Methods": "GET,POST,OPTIONS",
+    "Access-Control-Allow-Headers": "Content-Type",
+    "X-Content-Type-Options": "nosniff"
+  });
   res.end(JSON.stringify(data));
 }
 
@@ -74,27 +91,35 @@ function readBody(req) {
 function serveFile(req, res) {
   const cleanUrl = decodeURIComponent(req.url.split("?")[0]);
   const filePath = path.resolve(ROOT, cleanUrl === "/" ? "index.html" : cleanUrl.slice(1));
-  if (!filePath.startsWith(ROOT)) {
-    res.writeHead(403);
-    res.end("Forbidden");
+  if (filePath !== ROOT && !filePath.startsWith(ROOT + path.sep)) {
+    sendText(res, 403, "Forbidden");
     return;
   }
   fs.readFile(filePath, (error, data) => {
     if (error) {
-      res.writeHead(404);
-      res.end("Not found");
+      sendText(res, 404, "Not found");
       return;
     }
     res.writeHead(200, {
       "Content-Type": TYPES[path.extname(filePath)] || "application/octet-stream",
-      "Cache-Control": "no-store"
+      "Cache-Control": "no-store",
+      "X-Content-Type-Options": "nosniff"
     });
     res.end(data);
   });
 }
 
 const server = http.createServer(async (req, res) => {
-  if (req.url.split("?")[0] === "/api/leaderboard") {
+  const route = req.url.split("?")[0];
+  if (req.method === "OPTIONS") {
+    sendJson(res, { ok: true });
+    return;
+  }
+  if (route === "/api/health") {
+    sendJson(res, { ok: true, name: "Sprout Market Garden", rows: readScores().length });
+    return;
+  }
+  if (route === "/api/leaderboard") {
     if (req.method === "GET") {
       sendJson(res, { rows: ranked(readScores()) });
       return;
@@ -108,18 +133,30 @@ const server = http.createServer(async (req, res) => {
         writeScores(best);
         sendJson(res, { rows: best });
       } catch {
-        res.writeHead(400, { "Content-Type": "text/plain; charset=utf-8" });
-        res.end("Bad leaderboard score");
+        sendText(res, 400, "Bad leaderboard score");
       }
       return;
     }
-    res.writeHead(405);
-    res.end("Method not allowed");
+    sendText(res, 405, "Method not allowed");
     return;
   }
   serveFile(req, res);
 });
 
-server.listen(PORT, "127.0.0.1", () => {
-  console.log(`Sprout Market Garden server running at http://127.0.0.1:${PORT}/`);
-});
+function listen(port, attemptsLeft) {
+  server.once("error", error => {
+    if (error.code === "EADDRINUSE" && attemptsLeft > 0) {
+      console.log(`Port ${port} is busy, trying ${port + 1}...`);
+      listen(port + 1, attemptsLeft - 1);
+      return;
+    }
+    console.error(error.message);
+    process.exit(1);
+  });
+  server.listen(port, HOST, () => {
+    console.log(`Sprout Market Garden server running at http://${HOST}:${port}/`);
+    console.log("Open that URL in your browser. Press Ctrl+C here to stop the server.");
+  });
+}
+
+listen(START_PORT, 20);
