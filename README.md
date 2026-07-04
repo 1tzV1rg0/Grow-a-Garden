@@ -81,7 +81,7 @@ Sprinklers can increase the next harvest's fruit weight by adding a size boost t
 
 ## Plant Mutations and Weather
 
-Plants can now gain stackable mutations. Gold and Rainbow can appear naturally, and shared active weather can add weather mutations such as Wet, Frozen, Windblown, Celestial, Shocked from Thunderstorms, or Moonlit during the first 5 minutes of each hour in the Nighttime event. Shocked has a x10 value multiplier. Mutated harvests sell for more coins, and multiple mutations can stack on the same plant.
+Plants can now gain stackable mutations. Gold and Rainbow can appear naturally, and shared active weather can add weather mutations such as Wet, Frozen, Windblown, Celestial, Shocked from Thunderstorms, or Moonlit during the first 5 minutes of each hour in the Nighttime event. Shocked has a x10 value multiplier. Crops also get a one-time final mutation roll when growth finishes, and harvest triggers that final roll if it has not happened yet. Mutated harvests sell for more coins, and multiple mutations can stack on the same plant.
 
 ## More Fruits and Rarities
 
