@@ -28,7 +28,7 @@ Then open the URL printed in the terminal. It starts with `http://127.0.0.1:4177
 - Garden plots with live growth timers and animated crop growth.
 - Fruit weight rolls on harvest, with heavier crops selling for more.
 - Seed shop, Gear Shop, and Pet Shop eggs with limited shared restocks, Quick Buy quantity input, crop inventory, selling, and seed selection.
-- Visible pets that wander around the garden and level up from duplicates.
+- Equip up to 4 active pets; extra pets stay in inventory, and duplicates level pets up.
 - Optional generated music that changes to match the current weather.
 - Weekly Events tab, ready for rotating events.
 - Upgrades for more plots, faster growth, and bigger harvests.
@@ -39,7 +39,7 @@ Then open the URL printed in the terminal. It starts with `http://127.0.0.1:4177
 
 ## Saved Progress
 
-The game saves coins, seeds, harvested crops, planted crops, growth times, selected upgrades, unlocked plot count, current Seed Shop stock, Gear Shop stock, Pet Shop egg stock, pet levels, pet garden positions, restock timing, lifetime coins earned, lifetime seeds planted, and leaderboard name in the browser's localStorage. Refreshing or closing the page keeps your farm progress on the same browser and device.
+The game saves coins, seeds, harvested crops, planted crops, growth times, selected upgrades, unlocked plot count, current Seed Shop stock, Gear Shop stock, Pet Shop egg stock, owned pets, equipped pets, pet levels, pet garden positions, restock timing, lifetime coins earned, lifetime seeds planted, and leaderboard name in the browser's localStorage. Refreshing or closing the page keeps your farm progress on the same browser and device.
 
 
 ## Gear Shop
@@ -100,7 +100,7 @@ The Seed Shop restocks every 5 minutes and each restock has a limited number of 
 
 ## Pet Shop
 
-The Pet Shop sells eggs that hatch into pets. Egg stock is limited and restocks every 10 minutes on the same shared timer for everyone. More expensive eggs have lower stock chances. Eggs are premium purchases, with the original egg prices increased by 100x and new Orchard, Royal, and Prism eggs added. Owned pets appear around the garden, sometimes moving and sometimes stopping. Duplicate pets raise that pet type's level, improving passive abilities by 12% per level and reducing cooldowns for cooldown-based pets such as the Owl. Pets can improve mutation chances, add bonus coins from sales, speed up growth, increase harvest yield, and add extra harvests to planted crops.
+The Pet Shop sells eggs that hatch into pets. Egg stock is limited and restocks every 10 minutes on the same shared timer for everyone. More expensive eggs have lower stock chances. Eggs are premium purchases, with the original egg prices increased by 100x and new Orchard, Royal, and Prism eggs added. You can equip up to 4 pets at once; only equipped pets appear around the garden and provide bonuses, while leftover pets stay in inventory. Duplicate pets raise that pet type's level, improving passive abilities by 12% per level and reducing cooldowns for cooldown-based pets such as the Owl. Pets can improve mutation chances, add bonus coins from sales, speed up growth, increase harvest yield, and add extra harvests to planted crops.
 
 ## Online Leaderboard
 
