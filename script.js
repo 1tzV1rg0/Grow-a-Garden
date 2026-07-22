@@ -277,7 +277,7 @@ function btn(text,disabled,fn){var b=document.createElement("button");b.type="bu
 function say(t){el.log.textContent=t;pulse(el.log)}
 function pulse(x){x.classList.remove("pop");void x.offsetWidth;x.classList.add("pop")}
 function time(ms){var s=Math.max(0,Math.ceil(ms/1000)),m=Math.floor(s/60);s=s%60;return m?m+"m "+String(s).padStart(2,"0")+"s":s+"s"}
-function num(n){return Math.floor(n).toLocaleString()}
+function num(n){n=Math.floor(Number(n)||0);var abs=Math.abs(n),units=[{v:1e36,s:"ud"},{v:1e33,s:"d"},{v:1e30,s:"n"},{v:1e27,s:"o"},{v:1e24,s:"sp"},{v:1e21,s:"sx"},{v:1e18,s:"qi"},{v:1e15,s:"q"},{v:1e12,s:"t"},{v:1e9,s:"b"},{v:1e6,s:"m"},{v:1e3,s:"k"}];for(var i=0;i<units.length;i++){if(abs>=units[i].v){var value=n/units[i].v,decimals=Math.abs(value)>=100?0:Math.abs(value)>=10?1:2;return Number(value.toFixed(decimals)).toString()+units[i].s}}return n.toLocaleString()}
 })();
 
 
