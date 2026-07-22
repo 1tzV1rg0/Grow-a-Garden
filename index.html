@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="build" content="20260722-rebirth">
+  <meta name="build" content="20260722-tutorial">
   <title>Sprout Market Garden</title>
-  <link rel="stylesheet" href="style.css?v=20260722-rebirth">
+  <link rel="stylesheet" href="style.css?v=20260722-tutorial">
 </head>
 <body>
   <div class="app">
@@ -20,6 +20,7 @@
         <section class="panel hub-panel">
           <div class="tab-buttons" role="tablist" aria-label="Garden menus">
             <button class="tab-button active" data-tab="inventoryPanel" type="button">Inventory</button>
+            <button class="tab-button" data-tab="tutorialPanel" type="button">Tutorial</button>
             <button class="tab-button" data-tab="seedShopPanel" type="button">Seed Shop</button>
             <button class="tab-button" data-tab="gearShopPanel" type="button">Gear Shop</button>
             <button class="tab-button" data-tab="petShopPanel" type="button">Pet Shop</button>
@@ -30,6 +31,16 @@
             <button class="tab-button" data-tab="leaderboardPanel" type="button">Leaderboard</button>
           </div>
           <section id="inventoryPanel" class="tab-panel active" aria-labelledby="Inventory"><div class="bar"><h2>Inventory</h2><button id="sellAll" class="ghost">Sell All</button></div><div id="inventory" class="list"></div></section>
+          <section id="tutorialPanel" class="tab-panel" aria-labelledby="Tutorial">
+            <h2>Beginner Tutorial</h2>
+            <div class="tutorial-list">
+              <div class="tutorial-step"><strong>1</strong><div><b>Buy a seed</b><p>Open Seed Shop and buy Carrot seeds first. The button selects the seed after buying it.</p></div></div>
+              <div class="tutorial-step"><strong>2</strong><div><b>Plant it</b><p>Click an empty soil plot. The selected seed appears above the garden so you know what will be planted.</p></div></div>
+              <div class="tutorial-step"><strong>3</strong><div><b>Wait for ready</b><p>Watch the progress bar. A glowing plot is ready to harvest.</p></div></div>
+              <div class="tutorial-step"><strong>4</strong><div><b>Harvest and sell</b><p>Click the ready plot, then use Inventory to sell crops or Sell All for quick coins.</p></div></div>
+              <div class="tutorial-step"><strong>5</strong><div><b>Grow faster</b><p>Use coins on better seeds, plot upgrades, gear, pets, and daily quests. Events and rebirths are late-game goals.</p></div></div>
+            </div>
+          </section>
           <section id="seedShopPanel" class="tab-panel" aria-labelledby="Seed Shop"><div class="bar"><h2>Seed Shop</h2><button id="clearSeed" class="ghost">Clear</button></div><div id="shop" class="list"></div></section>
           <section id="gearShopPanel" class="tab-panel" aria-labelledby="Gear Shop"><h2>Gear Shop</h2><div id="gearShop" class="list"></div></section>
           <section id="questsPanel" class="tab-panel" aria-labelledby="Quests"><h2>Daily Quests</h2><div id="quests" class="list"></div></section>
@@ -61,7 +72,7 @@
       <button id="eggClose" type="button">Keep Pet</button>
     </div>
   </div>
-  <script src="script.js?v=20260722-rebirth"></script>
+  <script src="script.js?v=20260722-tutorial"></script>
 </body>
 </html>
 
