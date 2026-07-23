@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grow a Garden</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="game-header">
+      <div>
+        <p class="eyebrow">Sunny Patch</p>
+        <h1>Grow a Garden</h1>
+      </div>
+      <section class="wallet" aria-label="Player wallet">
+        <span>Coins</span>
+        <strong id="coinCount">0</strong>
+      </section>
+    </header>
+
+    <section class="status-strip" aria-label="Game status">
+      <div>
+        <span>Selected Seed</span>
+        <strong id="selectedSeedLabel">None</strong>
+      </div>
+      <div>
+        <span>Garden</span>
+        <strong id="gardenStatus">0 planted</strong>
+      </div>
+      <div>
+        <span>Save</span>
+        <strong id="saveStatus">Loading</strong>
+      </div>
+    </section>
+
+    <section class="layout">
+      <section class="garden-panel" aria-label="Garden">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">Garden Grid</p>
+            <h2>Your Plots</h2>
+          </div>
+          <button id="harvestReadyBtn" class="primary-btn" type="button">Harvest Ready</button>
+        </div>
+        <div id="gardenGrid" class="garden-grid" aria-live="polite"></div>
+      </section>
+
+      <aside class="side-panel" aria-label="Game controls">
+        <section class="card shop-card">
+          <div class="panel-heading compact">
+            <div>
+              <p class="eyebrow">Shop</p>
+              <h2>Seeds</h2>
+            </div>
+          </div>
+          <div id="shopList" class="shop-list"></div>
+        </section>
+
+        <section class="card">
+          <div class="panel-heading compact">
+            <div>
+              <p class="eyebrow">Inventory</p>
+              <h2>Seeds</h2>
+            </div>
+          </div>
+          <div id="seedInventory" class="inventory-list"></div>
+        </section>
+
+        <section class="card">
+          <div class="panel-heading compact">
+            <div>
+              <p class="eyebrow">Harvest</p>
+              <h2>Crops</h2>
+            </div>
+            <button id="sellAllBtn" class="secondary-btn" type="button">Sell All</button>
+          </div>
+          <div id="cropInventory" class="inventory-list"></div>
+        </section>
+
+        <section class="card actions-card">
+          <button id="saveBtn" class="secondary-btn" type="button">Save Game</button>
+          <button id="resetBtn" class="danger-btn" type="button">Reset</button>
+        </section>
+      </aside>
+    </section>
+  </main>
+
+  <script src="../src/plantRules.js"></script>
+  <script src="../src/shopRules.js"></script>
+  <script src="../src/gameRules.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

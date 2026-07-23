@@ -1,111 +1,91 @@
-﻿# Sprout Market Garden
+# Grow a Garden
 
-Sprout Market Garden is a complete browser farming game inspired by Grow a Garden. It is built with plain HTML, CSS, and JavaScript, with no external frameworks or downloads.
+Grow a Garden is a colorful browser farming game made with plain HTML, CSS, and JavaScript. Players buy seeds, plant them in a garden grid, wait for crops to grow, harvest them, and sell the harvest for coins.
 
-## How to Play
+## How to Run
 
-Open index.html in a browser.
+Open `public/index.html` in a web browser.
 
-For the online leaderboard, run the included server instead:
+The game is designed to run directly from the file. Some browsers block direct loading of local JSON files, so the game includes a matching fallback copy of the starter data. If you serve the folder with a small local web server, the game will load the JSON files from the `data` folder.
 
-```bash
-node server.js
+## Folder Structure
+
+```text
+public/
+  index.html
+  style.css
+  script.js
+src/
+  gameRules.js
+  plantRules.js
+  shopRules.js
+data/
+  players.json
+  plants.json
+  inventory.json
+README.md
 ```
 
-Then open the URL printed in the terminal. It starts with `http://127.0.0.1:4177/`, and if that port is already busy the server automatically tries the next available port.
+## What Each Folder Is For
 
-1. Buy seeds from the Seed Shop.
-2. Select a seed, then click an empty garden plot to plant it.
-3. Wait for the crop timer to finish.
-4. Click a ready crop to harvest it.
-5. Sell harvested crops for coins.
-6. Use coins to buy better seeds and upgrades.
+`public` contains the browser page, styles, and the main game controller script.
 
-## Features
+`src` contains JavaScript rule files. These files decide how planting, growth, selling, inventory, and shop actions work.
 
-- Expanded crop roster with vegetables and fruits, including Strawberry, Lemon, Cherry, Banana, Kiwi, Papaya, Bamboo, Pomegranate, Lychee, Durian, Lotus Fruit, Nebula Orange, Infinity Fig, and more.
-- Rarity tiers from Common through Mythic, shown in the shop and inventory.
-- Garden plots with live growth timers and animated crop growth.
-- Fruit weight rolls on harvest, with heavier crops selling for more.
-- Seed shop, Gear Shop, and Pet Shop eggs with limited shared restocks, Quick Buy quantity input, crop inventory, selling, and seed selection.
-- Equip up to 4 active pets; extra pets stay in inventory, and duplicates level pets up.
-- Optional generated music that changes to match the current weather.
-- Weekly Events tab, ready for rotating events.
-- Upgrades for more plots, faster growth, and bigger harvests.
-- Responsive layout for desktop, tablet, and mobile screens.
-- Automatic localStorage saving every few seconds and before the page closes.
-- Manual Save Game and Reset Game controls.
-- Online leaderboard when hosted with `server.js`, ranked by coins, coins earned, and seeds planted.
+`data` contains starter game data in JSON. JSON files store numbers and lists, not gameplay logic.
 
-## Saved Progress
+## Game Data Files
 
-The game saves coins, seeds, harvested crops, planted crops, growth times, selected upgrades, unlocked plot count, current Seed Shop stock, Gear Shop stock, Pet Shop egg stock, owned pets, equipped pets, pet levels, pet garden positions, restock timing, lifetime coins earned, lifetime seeds planted, and leaderboard name in the browser's localStorage. Refreshing or closing the page keeps your farm progress on the same browser and device.
+`data/players.json` stores the starting player setup:
 
+- `startingCoins`: how many coins a new player begins with
+- `gardenSize`: how many plots appear in the garden grid
 
-## Gear Shop
+`data/plants.json` stores plant stats:
 
-The Gear Shop sells premium consumable tools with Quick Buy support. Gear stock is limited and restocks every 5 minutes on the same shared timer for everyone:
+- `id`: unique plant key used by inventory and rules
+- `name`: display name
+- `emoji`: plant icon shown in the game
+- `seedPrice`: coin cost to buy one seed
+- `growTimeSeconds`: how long the crop takes to become ready
+- `sellValue`: coins earned for selling one harvested crop
 
-- Shovel: removes a planted crop from a plot.
-- Watering Can: bought in bundles of 10 and halves the remaining growth time of a planted crop.
-- Reclaimer: removes a planted crop and returns one matching seed.
-- Basic Sprinkler, Advanced Sprinkler, and Master Sprinkler: water a 3x3 plot area, speed up growth, increase fruit size for heavier harvests, and boost mutation rates.
+`data/inventory.json` stores starter inventory:
 
-## Daily Quests
+- `seeds`: starting seed counts by plant id
+- `crops`: starting harvested crop counts by plant id
 
-Daily quests reset each day and track planting seeds plus coins earned from selling crops. Completing quests awards seed packs such as Starter Seed Pack, Fruit Seed Pack, and Rare Seed Pack.
+## How to Add New Plants
 
-## Weekly Events
+Add a new object to the `plants` array in `data/plants.json`:
 
-Events rotate once a week from the Events tab. This week's event is Nighttime.
+```json
+{
+  "id": "blueberry",
+  "name": "Blueberry",
+  "emoji": "🫐",
+  "seedPrice": 35,
+  "growTimeSeconds": 26,
+  "sellValue": 72
+}
+```
 
-Nighttime adds Night Time weather during the first 5 minutes of every hour, which can give plants the Moonlit mutation for a x4 value multiplier. Weather is shared by time window, so every player sees the same weather at the same time. Weather events rotate every 5 minutes, can last 5 to 10 minutes, and up to two weather events can overlap. The event shop restocks every 10 minutes with the same restock time and stock for everyone. It has limited stock for Moon Blossom, Moonbloom, Owl, and Night Seed Packs. The Owl is a Divine event pet that makes a planted crop Moonlit every 5 minutes. Night Seed Packs can contain Orchid, Lavender, Mulberry, Nightshade, Black Apple, or Dark Blossom.
+To give the player starter seeds for that plant, add the same id to `data/inventory.json`:
 
+```json
+{
+  "seeds": {
+    "carrot": 3,
+    "strawberry": 1,
+    "blueberry": 2
+  },
+  "crops": {}
+}
+```
 
-## Upgrade Progression
+No rule changes are needed for a basic plant. The shop, garden, inventory, harvesting, and selling systems read the plant list automatically.
 
-Upgrades now use generated level-based progression up to Level 50. More Plots adds one plot per level, Growth Speed gradually shortens new crop timers with a 4 second minimum, and Harvest Yield adds one bonus crop every two levels. Upgrade costs rise deterministically as levels increase.
+## Save and Load
 
+Starter data comes from the JSON files. Player progress is saved in the browser with `localStorage`, including coins, seeds, harvested crops, and planted garden plots. Use the Save Game button to save manually, or let the game autosave while playing.
 
-## Multi-Harvest Crops
-
-Some fruit crops now stay planted after harvest and regrow for additional harvests. Strawberry, Blueberry, Apple, Grape, Mango, Dragonfruit, Starfruit, and Moon Melon can all produce more than once before the plot clears.
-
-The garden now starts with 12 plots, and plot upgrades add one additional plot per level after that.
-
-## Fruit Weight
-
-Each harvest rolls a fruit weight. Heavier crops receive a higher sell multiplier, and harvested inventory shows the weight and value multiplier for each stack. Mutations and pet coin bonuses stack with weight value.
-
-Sprinklers can increase the next harvest's fruit weight by adding a size boost to plants in a 3x3 area. They also add a temporary mutation boost that can help plants gain Gold, Rainbow, and active weather mutations while growing. Temporary growth speed boosts are cleared after harvest or regrowth, so sped-up crops do not keep saving that boost forever.
-
-
-## Plant Mutations and Weather
-
-Plants can now gain stackable mutations. Gold and Rainbow can appear naturally, and shared active weather can add weather mutations such as Wet, Frozen, Windblown, Celestial, Shocked from Thunderstorms, or Moonlit during the first 5 minutes of each hour in the Nighttime event. Shocked has a x10 value multiplier. Crops also get a one-time final mutation roll when growth finishes, and harvest triggers that final roll if it has not happened yet. Mutated harvests sell for more coins, and multiple mutations can stack on the same plant.
-
-Use the Music button in Game Controls to turn on generated background music. Browsers require a click before sound can start, so music stays off until the player enables it. The active weather controls the notes, and overlapping weather mixes two small themes.
-
-## More Fruits and Rarities
-
-The crop roster now includes Peach, Pineapple, Sugar Apple, Sun Pear, Crystal Coconut, Prism Berry, Aurora Fruit, Lemon, Cherry, Banana, Kiwi, Papaya, Bamboo, Pomegranate, Cacao Pod, Lychee, Durian, Lotus Fruit, Ambrosia Plum, Nebula Orange, and Infinity Fig. Divine and Prismatic rarities sit above Mythic. Seed prices and unlock points were increased heavily, with Prismatic seed prices now reaching into the millions, and sell values are balanced around multi-harvest and mutation stacking so progression lasts longer.
-
-## Seed Pack Exclusives and Animation
-
-Some fruits are seed-pack exclusive and never appear in the seed shop: Candy Apple, Cloudberry, Ember Fig, Royal Kiwi, and Prism Plum. Quest rewards now open with a seed pack reveal animation before the awarded seeds are collected.
-
-## Seed Shop Restocks
-
-The Seed Shop restocks every 5 minutes and each restock has a limited number of seeds available. Restock rolls are shared by time window, so every player sees the same fresh stock during the same 5-minute period, while each player's purchases still reduce their own local stock. Seeds are displayed by rarity and price. Rarer seeds appear less often, and Prismatic seeds have only a 0.05% chance to appear in stock. Use Quick Buy on a stocked seed to type how many seeds you want to purchase at once.
-
-## Pet Shop
-
-The Pet Shop sells eggs that hatch into pets. Egg stock is limited and restocks every 10 minutes on the same shared timer for everyone. More expensive eggs have lower stock chances. Eggs are premium purchases, with the original egg prices increased by 100x and new Orchard, Royal, and Prism eggs added. You can equip up to 4 pets at once; only equipped pets appear around the garden and provide bonuses, while leftover pets stay in inventory. Duplicate pets raise that pet type's level, improving passive abilities by 12% per level and reducing cooldowns for cooldown-based pets such as the Owl. Pets can improve mutation chances, add bonus coins from sales, speed up growth, increase harvest yield, and add extra harvests to planted crops.
-
-## Online Leaderboard
-
-The Leaderboard tab can submit and refresh online scores when the game is opened through `server.js`. Scores are stored in `leaderboard.json` and ranked by current coins, then lifetime coins earned, then lifetime seeds planted. If the game is opened directly as `index.html` or through GitHub Pages, the leaderboard tab will explain that the local server needs to be running.
-
-Update game website
-
-<!-- Trigger GitHub Pages redeploy -->

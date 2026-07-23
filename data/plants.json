@@ -1,0 +1,44 @@
+{
+  "plants": [
+    {
+      "id": "carrot",
+      "name": "Carrot",
+      "emoji": "🥕",
+      "seedPrice": 10,
+      "growTimeSeconds": 8,
+      "sellValue": 18
+    },
+    {
+      "id": "strawberry",
+      "name": "Strawberry",
+      "emoji": "🍓",
+      "seedPrice": 18,
+      "growTimeSeconds": 14,
+      "sellValue": 34
+    },
+    {
+      "id": "tomato",
+      "name": "Tomato",
+      "emoji": "🍅",
+      "seedPrice": 28,
+      "growTimeSeconds": 22,
+      "sellValue": 55
+    },
+    {
+      "id": "sunflower",
+      "name": "Sunflower",
+      "emoji": "🌻",
+      "seedPrice": 45,
+      "growTimeSeconds": 35,
+      "sellValue": 92
+    },
+    {
+      "id": "watermelon",
+      "name": "Watermelon",
+      "emoji": "🍉",
+      "seedPrice": 70,
+      "growTimeSeconds": 50,
+      "sellValue": 150
+    }
+  ]
+}
